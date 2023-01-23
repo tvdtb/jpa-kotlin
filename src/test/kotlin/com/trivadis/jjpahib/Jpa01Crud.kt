@@ -19,16 +19,26 @@ class Jpa01Crud {
 
     @Test
     fun doCreate() {
-        TODO
+        val user = User(name = "John Doe", email = "john.doe@jpa.org")
+        em.persist(user)
+        println("USER = " + user)
     }
 
     @Test
     fun doReadDetachUpdate() {
-        TODO
+        val foundUser = em.find(User::class.java, 202)
+        println("FOUND = " + foundUser)
+
+        // em.detach(foundUser)
+
+        foundUser.name = "now="+LocalDateTime.now()
     }
 
     @Test
     fun doDelete() {
-        TODO
+        val foundUser = em.find(User::class.java, 202)
+        println("FOUND = " + foundUser)
+
+        em.remove(foundUser)
     }
 }
