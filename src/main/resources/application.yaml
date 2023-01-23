@@ -1,0 +1,25 @@
+# https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
+
+server:
+  port: 8080
+
+spring:
+  sql.init.mode: never
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        generate_statistics: true
+# -javaagent:spring-instrument-6.0.2.jar --add-opens java.base/java.lang=ALL-UNNAMED
+#        enhancer:
+#          enableLazyInitialization: true
+  datasource:
+    url: jdbc:postgresql://localhost/postgres
+    username: jjpahib_user
+    password: incorrect
+    hikari:
+      minimumIdle: 0
+      maximumPoolSize: 5
