@@ -5,6 +5,7 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(name = "users")
+@Cacheable()
 open class User(
     @Id @GeneratedValue
     open var id: Long? = null,
